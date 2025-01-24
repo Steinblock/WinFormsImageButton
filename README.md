@@ -1,1 +1,1 @@
-# WinformsImageButton
+# WinForms ImageButton
