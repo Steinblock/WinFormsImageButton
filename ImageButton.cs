@@ -58,6 +58,7 @@ namespace ButtonDemo
 
                 imageGrayScale = null;
                 imageGrayScaleTransparencyColor = null;
+                this.Invalidate();
             }
         }
 

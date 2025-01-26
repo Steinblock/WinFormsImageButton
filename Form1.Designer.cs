@@ -40,8 +40,10 @@
             Button3 = new ImageButton();
             Button0 = new ImageButton();
             ButtonClear = new ImageButton();
-            ButtonSpace = new ImageButton();
             ButtonBack = new ImageButton();
+            radioButton2D = new RadioButton();
+            radioButton3D = new RadioButton();
+            ButtonSpace = new ImageButton();
             SuspendLayout();
             // 
             // Button7
@@ -196,6 +198,42 @@
             ButtonClear.TabIndex = 11;
             ButtonClear.Text = "c";
             // 
+            // ButtonBack
+            // 
+            ButtonBack.ClickOnHold = true;
+            ButtonBack.DialogResult = DialogResult.None;
+            ButtonBack.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ButtonBack.HelpText = null;
+            ButtonBack.Image = Images.button60x60;
+            ButtonBack.Location = new Point(150, 256);
+            ButtonBack.Name = "ButtonBack";
+            ButtonBack.Size = new Size(63, 63);
+            ButtonBack.TabIndex = 13;
+            ButtonBack.Text = "←";
+            // 
+            // radioButton2D
+            // 
+            radioButton2D.AutoSize = true;
+            radioButton2D.Checked = true;
+            radioButton2D.Location = new Point(271, 49);
+            radioButton2D.Name = "radioButton2D";
+            radioButton2D.Size = new Size(90, 24);
+            radioButton2D.TabIndex = 14;
+            radioButton2D.TabStop = true;
+            radioButton2D.Text = "Style Flat";
+            radioButton2D.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3D
+            // 
+            radioButton3D.AutoSize = true;
+            radioButton3D.Location = new Point(271, 88);
+            radioButton3D.Name = "radioButton3D";
+            radioButton3D.Size = new Size(85, 24);
+            radioButton3D.TabIndex = 15;
+            radioButton3D.Text = "Style 3D";
+            radioButton3D.UseVisualStyleBackColor = true;
+            radioButton3D.CheckedChanged += radioButton2_CheckedChanged;
+            // 
             // ButtonSpace
             // 
             ButtonSpace.ClickOnHold = true;
@@ -209,25 +247,14 @@
             ButtonSpace.TabIndex = 12;
             ButtonSpace.Text = " ";
             // 
-            // ButtonBack
-            // 
-            ButtonBack.ClickOnHold = true;
-            ButtonBack.DialogResult = DialogResult.None;
-            ButtonBack.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ButtonBack.HelpText = null;
-            ButtonBack.Image = Images.button60x60;
-            ButtonBack.Location = new Point(150, 256);
-            ButtonBack.Name = "ButtonBack";
-            ButtonBack.Size = new Size(63, 63);
-            ButtonBack.TabIndex = 13;
-            ButtonBack.Text = "<-";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(233, 403);
+            ClientSize = new Size(503, 403);
+            Controls.Add(radioButton3D);
+            Controls.Add(radioButton2D);
             Controls.Add(ButtonBack);
             Controls.Add(ButtonSpace);
             Controls.Add(ButtonClear);
@@ -245,7 +272,8 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             KeyPreview = true;
             Name = "Form1";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "ButtonDemo";
             Load += Form1_Load;
             KeyPress += Form1_KeyPress;
             ResumeLayout(false);
@@ -266,7 +294,9 @@
         private ImageButton Button3;
         private ImageButton Button0;
         private ImageButton ButtonClear;
-        private ImageButton ButtonSpace;
         private ImageButton ButtonBack;
+        private RadioButton radioButton2D;
+        private RadioButton radioButton3D;
+        private ImageButton ButtonSpace;
     }
 }

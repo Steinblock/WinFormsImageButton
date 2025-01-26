@@ -47,6 +47,8 @@ namespace ButtonDemo
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             ButtonClear.Enabled = this.textBox1.Text.Length > 0;
+            textBox1.Focus();
+            textBox1.SelectionStart = textBox1.Text.Length;
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
@@ -72,6 +74,26 @@ namespace ButtonDemo
             {
                 button.PerformClick(200);
             }
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            var image = radioButton3D.Checked ? Images.button_3D_60x60 : Images.button60x60;
+            var imageLong = radioButton3D.Checked ? Images.button_3D_60x60 : Images.button200x60;
+            this.Button0.Image = image;
+            this.Button1.Image = image;
+            this.Button2.Image = image;
+            this.Button3.Image = image;
+            this.Button4.Image = image;
+            this.Button5.Image = image;
+            this.Button6.Image = image;
+            this.Button7.Image = image;
+            this.Button8.Image = image;
+            this.Button9.Image = image;
+            this.ButtonClear.Image = image;
+            this.ButtonBack.Image = image;
+            this.ButtonSpace.Image = imageLong;
 
         }
     }
